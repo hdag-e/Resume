@@ -1,5 +1,3 @@
-### File 2: `02_documentation/baseline_config_requirements.md`
-
 ```markdown
 # Baseline Device Configuration Checklist & Standards (SCRUM-77)
 
