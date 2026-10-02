@@ -1,4 +1,3 @@
-```markdown
 # Baseline Device Configuration Checklist & Standards (SCRUM-77)
 
 ## 1. Overview
@@ -26,8 +25,9 @@ enable
 configure terminal
 hostname <DEVICE_NAME>
 ip domain-name cyberops.local
-
-###B. Security and Local Credentials Hardening
+```
+###B. Security & Local Credentials Hardening
+```cisco
 ! Local Administrator Account
 username admin privilege 15 secret CyberOps2026!
 
@@ -49,8 +49,9 @@ line vty 0 15
  login local
  transport input ssh
 exit
-
+```
 ###C. Logging & Timestamp Standardization
+```cisco
 ! Clock & Timestamp Configuration
 clock timezone UTC 0 0
 service timestamps log datetime msec show-timezone
@@ -59,8 +60,9 @@ service timestamps debug datetime msec show-timezone
 ! Centralized Log Emission
 logging host 10.20.50.10
 logging trap informational
-
-###4. Layer 3 Inter-VLAN Standards
+```
+###4. Layer 3 Inter-VLAN Routing Standards (SW-DIST-01)
+```cisco
 ! Enable IP Routing
 ip routing
 
@@ -94,3 +96,4 @@ interface Vlan500
  description Guest_Untrusted_Gateway
  ip address 192.168.50.1 255.255.255.0
  no shutdown
+```
