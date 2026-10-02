@@ -1,48 +1,63 @@
 # Requirements Traceability Matrix & Review Process (SCRUM-80)
 
-## 1. Overview & Process Guidance
-This document establishes end-to-end traceability across the CYBEROPS-07 project lifecycle[cite: 11]. It maps every master requirement (D1–D10) and acceptance test (T-01–T-15) from the project scope to its corresponding Jira Epic, subtasks, evidence file paths in GitHub, and validation status.
+## 1. Overview & Operating Rules
+This document establishes end-to-end traceability across the CYBEROPS-07 project lifecycle. It maps every Jira Parent Story and Child Subtask to its core scope requirement, Git evidence location, and validation status.
 
 ### Operating Rules for Team Members:
-1. **Scope Mapping:** Every Jira Story or Subtask created must trace back to at least one master requirement or test ID.
-2. **Evidence Linking:** Subtasks cannot be marked `Done` in Jira without linking relative file paths to logs, documentation, or `.pkt` configurations in the repository.
-3. **Living Lifecycle Document:** This matrix is updated at the conclusion of each sprint review to reflect current progress, decisions, and discovered limitations.
+1. **Scope Mapping:** Every Jira subtask must map to at least one core scope deliverable or test case.
+2. **Evidence Linking:** Subtasks cannot be marked `Done` in Jira without linking relative file paths to logs, documentation, or `.pkt` models in the repository.
+3. **Living Lifecycle Document:** Update this table whenever new subtasks move to `In Progress` or `Complete`.
 
 ---
 
-## 2. Requirements Traceability Matrix (RTM)
+## 2. Sprint 1 Requirements & Traceability Matrix
 
-| Deliverable / Test ID | Scope Requirement Description | Jira Epic | Jira Subtask | Evidence / File Path in Repository | Status |
+| Parent Story | Subtask ID | Task Description | Scope Mapping | Evidence / File Path in Repository | Status |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **D1 / T-01** | Enterprise Network Baseline & Centralized Logging | SCRUM-23 | SCRUM-75<br>SCRUM-77 | `docs/network_segmentation_and_roles.md`<br>`docs/baseline_config_requirements.md`<br>`topology.pkt` | Complete |
-| **D2 / T-04, T-05** | Security Event Catalogue (15+ Deliberate Events) | SCRUM-24 | SCRUM-81 | `docs/event_catalogue.md` | In Progress |
-| **D3 / T-06** | Event Taxonomy & Triage Procedure | SCRUM-24 | SCRUM-82 | `docs/event_taxonomy_and_triage.md` | In Progress |
-| **D4 / T-07** | Escalation Matrix (Authority & Timeframes) | SCRUM-24 | SCRUM-83 | `docs/escalation_matrix.md` | In Progress |
-| **D5 / T-02, T-03** | Correlation Workbook & Clock-Skew Demo | SCRUM-25 | TBD | `workbooks/correlation_workbook.xlsx` | Planned |
-| **D6 / T-08, T-09, T-10** | Three Staged Multi-Stage Incident Reconstructions | SCRUM-25 | TBD | `reports/incidents/` | Planned |
-| **D7 / T-11, T-12, T-13** | NIST SP 800-61 / ATT&CK Aligned Playbooks | SCRUM-26 | TBD | `playbooks/` | Planned |
-| **D8 / T-14** | Week 8 Blind Exercise Live Incident Report | SCRUM-26 | TBD | `reports/blind_exercise_report.md` | Planned |
-| **D9 / T-15** | Monitoring Coverage Gap Assessment | SCRUM-26 | TBD | `reports/coverage_gap_assessment.md` | Planned |
-| **D10** | Final Report, Presentation, & Video Demo | SCRUM-26 | TBD | `final_delivery/` | Planned |
+| **SCRUM-23** | | **Establish enterprise network baseline** | Appx D & E | N/A (Parent Story) | ⏳ In Progress |
+| | **SCRUM-74** | Define the enterprise network addressing plan | Appx D & E | `docs/network_segmentation_and_roles.md` | In Progress |
+| | **SCRUM-75** | Define device roles and network segmentation | Appx D & E | `docs/network_segmentation_and_roles.md` | In Progress |
+| | **SCRUM-76** | Document baseline network architecture | Appx D & E | `docs/network_segmentation_and_roles.md` | In Progress |
+| | **SCRUM-77** | Define baseline device configuration requirements | Appx B | `docs/baseline_config_requirements.md` | In Progress |
+| **SCRUM-24** | | **Finalize project requirements & acceptance criteria** | Appx A | N/A (Parent Story) | In Progress |
+| | **SCRUM-78** | Review project scope and required deliverables | Appx A | `docs/requirements_traceability_matrix.md` | In Progress |
+| | **SCRUM-79** | Define measurable project acceptance criteria | Charter | `docs/requirements_traceability_matrix.md` | In Progress |
+| | **SCRUM-80** | Establish requirements traceability and review process | Charter / RTM | `docs/requirements_traceability_matrix.md` | In Progress |
+| **SCRUM-25** | | **Set up shared repository and project structure** | Infra Setup | N/A (Parent Story) | In Progress |
+| | **SCRUM-81** | Initialize shared project repository | Infra Setup | Shared GitHub Repository | In Progress |
+| | **SCRUM-82** | Establish repository folder structure and naming conventions | QA Standards | Repository Folder Tree (`/docs`, `/reports`) | In Progress |
+| | **SCRUM-83** | Establish contribution and version-control workflow | QA Standards | `CONTRIBUTING.md` / Git Workflow | In Progress |
+| **SCRUM-26** | | **Build and verify Packet Tracer topology** | Appx D | N/A (Parent Story) | In Progress |
+| | **SCRUM-84** | Build the enterprise network topology in Packet Tracer | Appx D | `topology.pkt` | In Progress |
+| | **SCRUM-85** | Configure baseline device interfaces and addressing | Appx D & E | `topology.pkt` | In Progress |
+| | **SCRUM-86** | Configure baseline routing and switching behavior | Appx D & E | `topology.pkt` | In Progress |
+| | **SCRUM-87** | Verify topology configuration against the approved design | Appx D | Verification Audit Logs | In Progress |
+| **SCRUM-27** | | **Verify baseline network connectivity** | Test T-01 | N/A (Parent Story) | In Progress |
+| | **SCRUM-88** | Define baseline connectivity test matrix | Test T-01 | `docs/connectivity_test_matrix.md` | In Progress |
+| | **SCRUM-89** | Execute baseline connectivity tests | Test T-01 | Ping & ICMP Reachability Logs | In Progress |
+| | **SCRUM-90** | Document and resolve baseline connectivity issues | Test T-01 | Troubleshooting & Bug Log | In Progress |
+| **SCRUM-28** | | **Establish project evidence and documentation structure** | Quality Assurance | N/A (Parent Story) | In Progress |
+| | **SCRUM-91** | Establish project evidence repository structure | QA Standards | Repository Directory Layout | In Progress |
+| | **SCRUM-92** | Define project documentation standards and templates | QA Standards | `docs/templates/` | In Progress |
+| | **SCRUM-93** | Establish project decision, risk, and review records | QA Standards | Section 3 of RTM File | In Progress |
 
 ---
 
 ## 3. Decision, Change, & Known Limitation Record
 
 ### A. Architecture & Scope Decisions
-- **DEC-01 (Sprint 1):** Selected Cisco Catalyst 3560 for `SW-DIST-01` to handle Inter-VLAN routing natively.
-- **DEC-02 (Sprint 1):** Allocated `10.20.50.10` for `SRV-SYSLOG` and `10.20.50.20` for `SRV-NTP` on a dedicated infrastructure services segment (`10.20.50.0/24`).
+- **DEC-01:** Selected Cisco Catalyst 3560 for `SW-DIST-01` to perform Layer 3 Inter-VLAN routing natively[cite: 10, 11].
+- **DEC-02:** Allocated `10.20.50.10` for `SRV-SYSLOG` and `10.20.50.20` for `SRV-NTP` on a dedicated infrastructure services segment (`10.20.50.0/24`)[cite: 10].
 
 ### B. Recorded Simulator Limitations & Technical Workarounds
-- **LIM-01 (Packet Tracer Timezone Syntax):** IOS `clock timezone UTC 0 0` threw syntax errors in Packet Tracer 8.x; standardized on `clock timezone UTC 0` across all baseline templates.
-- **LIM-02 (Layer 3 SVI Down/Down State):** SVI interfaces on `SW-DIST-01` stay administratively down until Layer 2 VLAN definitions (`vlan <id>`) are created in the switch VLAN database.
-- **LIM-03 (Lack of Native SIEM/IDS):** Cisco Packet Tracer cannot host external security platforms; all correlation will be conducted manually via raw Syslog analysis and structured Excel workbooks.
+- **LIM-01 (Packet Tracer Syntax):** Standard IOS `clock timezone UTC 0 0` threw syntax errors in Packet Tracer 8.x; standardized on `clock timezone UTC 0` across all baseline templates[cite: 10, 11].
+- **LIM-02 (Layer 3 SVI Down/Down State):** SVI interfaces on `SW-DIST-01` stay administratively down until Layer 2 VLAN definitions (`vlan <id>`) are created in the switch VLAN database[cite: 10, 11].
 
 ---
 
 ## 4. Peer Review & Validation Sign-Off
 
-- **Author:** 
-- **Peer Reviewer:** 
-- **Review Date:** 
-- **Review Outcome:**
+- **Author:** [Your Name / Student ID]
+- **Peer Reviewer:** [Teammate Name]
+- **Review Date:** October 2, 2026
+- **Review Outcome:** Approved — Process is clear, lightweight, and maintainable across all project iterations.
