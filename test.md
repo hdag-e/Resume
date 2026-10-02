@@ -1,3 +1,4 @@
+```mermaid
 graph TD
     classDef edge fill:#f9f,stroke:#333,stroke-width:2px;
     classDef internal fill:#bbf,stroke:#333,stroke-width:2px;
@@ -24,3 +25,4 @@ graph TD
 
     SW_ACC3 --> LOGGING["Logging & Time Subnet (10.20.50.0/24) - SRV-SYSLOG & SRV-NTP"] ::: server
     SW_ACC3 --> SERVERS["Server Subnet (10.20.30.0/24) - SRV-APP-01 & 02"] ::: server
+```
