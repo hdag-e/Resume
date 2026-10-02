@@ -1,12 +1,12 @@
 # Baseline Device Configuration Checklist & Standards (SCRUM-77)
 
 ## 1. Overview
-This document specifies the minimum baseline configuration required for every infrastructure device in the Packet Tracer topology before monitoring and logging features are implemented in Sprint 2.
+This document specifies the core operational baseline configuration required for every infrastructure device in the enterprise Packet Tracer topology prior to applying security hardening or monitoring features in subsequent tasks.
 
 ---
 
 ## 2. Naming Conventions & Standard Identifiers
-All devices must be named consistently in both hostname and Packet Tracer display labels:
+All devices must be named consistently across CLI hostnames and Packet Tracer canvas labels:
 
 - **Edge Router:** `RTR-EDGE-01`
 - **Internal Routers:** `RTR-INT-01`, `RTR-INT-02`
@@ -17,7 +17,7 @@ All devices must be named consistently in both hostname and Packet Tracer displa
 ---
 
 ## 3. Mandatory Baseline CLI Configuration Checklist
-Every router and switch must have the following baseline commands applied:
+Every router and switch must have the following core baseline settings applied:
 
 ### A. Device Identity & Hostname
 ```cisco
@@ -26,41 +26,28 @@ configure terminal
 hostname <DEVICE_NAME>
 ip domain-name cyberops.local
 ```
-### B. Security & Local Credentials Hardening
+### B. Console & Line Control Baseline
 ```cisco
-! Local Administrator Account
-username admin privilege 15 secret CyberOps2026!
-
-! SSH Key Generation & Transport Enforcement
-crypto key generate rsa general-keys modulus 2048
-ip ssh version 2
-
-! Console Port Security
+! Console Port Execution & Sync
 line con 0
  exec-timeout 10 0
  logging synchronous
- login local
 exit
 
-! VTY Lines (SSH Only)
+! VTY Lines Execution & Sync
 line vty 0 15
  exec-timeout 10 0
  logging synchronous
- login local
- transport input ssh
 exit
 ```
-### C. Logging & Timestamp Standardization
+### C. Clock & Timezone Setup
 ```cisco
-! Clock & Timestamp Configuration
+! Uniform Timezone Baseline
 clock timezone UTC 0 0
-service timestamps log datetime msec show-timezone
-service timestamps debug datetime msec show-timezone
-
-! Centralized Log Emission
-logging host 10.20.50.10
-logging trap informational
 ```
+
+---
+
 ### 4. Layer 3 Inter-VLAN Routing Standards (SW-DIST-01)
 ```cisco
 ! Enable IP Routing
