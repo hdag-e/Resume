@@ -43,17 +43,32 @@ exit
 ### C. Clock & Timezone Setup
 ```cisco
 ! Uniform Timezone Baseline
-clock timezone UTC 0 0
+clock timezone UTC 0 
 ```
 
 ---
 
 ### 4. Layer 3 Inter-VLAN Routing Standards (SW-DIST-01)
 ```cisco
-! Enable IP Routing
+! Step 1: Create Layer 2 VLAN Database Entries (Required for SVIs to show UP/UP)
+vlan 10
+ name Users
+vlan 20
+ name Admins
+vlan 30
+ name Servers
+vlan 50
+ name Logging_NTP
+vlan 99
+ name Management
+vlan 500
+ name Guest
+exit
+
+! Step 2: Enable Layer 3 Inter-VLAN Routing
 ip routing
 
-! Interface VLAN / Gateway IPs
+! Step 3: Configure Layer 3 SVI Gateways
 interface Vlan10
  description User_Subnet_Gateway
  ip address 10.20.10.1 255.255.255.0
@@ -82,5 +97,12 @@ interface Vlan99
 interface Vlan500
  description Guest_Untrusted_Gateway
  ip address 192.168.50.1 255.255.255.0
+ no shutdown
+
+! Step 4: Configure Trunk Ports to Access Switches (e.g., GigabitEthernet 1/0/1 - 3)
+interface range Gig1/0/1 - 3
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ description Trunk_To_Access_Switches
  no shutdown
 ```
