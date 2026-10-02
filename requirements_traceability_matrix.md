@@ -45,13 +45,6 @@ This document establishes end-to-end traceability across the CYBEROPS-07 project
 
 ## 3. Decision, Change, & Known Limitation Record
 
-### A. Architecture & Scope Decisions
-- **DEC-01:** Selected Cisco Catalyst 3560 for `SW-DIST-01` to perform Layer 3 Inter-VLAN routing natively.
-- **DEC-02:** Allocated `10.20.50.10` for `SRV-SYSLOG` and `10.20.50.20` for `SRV-NTP` on a dedicated infrastructure services segment (`10.20.50.0/24`).
-
-### B. Recorded Simulator Limitations & Technical Workarounds
-- **LIM-01 (Packet Tracer Syntax):** Standard IOS `clock timezone UTC 0 0` threw syntax errors in Packet Tracer 8.x; standardized on `clock timezone UTC 0` across all baseline templates.
-- **LIM-02 (Layer 3 SVI Down/Down State):** SVI interfaces on `SW-DIST-01` stay administratively down until Layer 2 VLAN definitions (`vlan <id>`) are created in the switch VLAN database.
 
 ---
 
