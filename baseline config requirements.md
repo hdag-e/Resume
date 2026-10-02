@@ -26,7 +26,7 @@ configure terminal
 hostname <DEVICE_NAME>
 ip domain-name cyberops.local
 ```
-###B. Security & Local Credentials Hardening
+### B. Security & Local Credentials Hardening
 ```cisco
 ! Local Administrator Account
 username admin privilege 15 secret CyberOps2026!
@@ -50,7 +50,7 @@ line vty 0 15
  transport input ssh
 exit
 ```
-###C. Logging & Timestamp Standardization
+### C. Logging & Timestamp Standardization
 ```cisco
 ! Clock & Timestamp Configuration
 clock timezone UTC 0 0
@@ -61,7 +61,7 @@ service timestamps debug datetime msec show-timezone
 logging host 10.20.50.10
 logging trap informational
 ```
-###4. Layer 3 Inter-VLAN Routing Standards (SW-DIST-01)
+### 4. Layer 3 Inter-VLAN Routing Standards (SW-DIST-01)
 ```cisco
 ! Enable IP Routing
 ip routing
