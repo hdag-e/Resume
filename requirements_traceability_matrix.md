@@ -23,10 +23,10 @@ This document establishes end-to-end traceability across the CYBEROPS-07 project
 | | **SCRUM-78** | Review project scope and required deliverables | Appx A | `Documentations/requirements_traceability_matrix.md` | In Progress |
 | | **SCRUM-79** | Define measurable project acceptance criteria | Charter | `Documentations/requirements_traceability_matrix.md` | In Progress |
 | | **SCRUM-80** | Establish requirements traceability and review process | Charter / RTM | `Documentations/requirements_traceability_matrix.md` | In Progress |
-| **SCRUM-25** | | **Set up shared repository and project structure** | Infra Setup | N/A (Parent Story) | In Progress |
-| | **SCRUM-81** | Initialize shared project repository | Infra Setup | Root (`README.md`, `CONTRIBUTING.md`) | In Progress |
-| | **SCRUM-82** | Establish repository folder structure and naming conventions | QA Standards | Repository Directory Tree | In Progress |
-| | **SCRUM-83** | Establish contribution and version-control workflow | QA Standards | `CONTRIBUTING.md` | In Progress |
+| **SCRUM-25** | | **Set up shared repository and project structure** | Infra Setup | N/A (Parent Story) | Complete |
+| | **SCRUM-81** | Initialize shared project repository | Infra Setup | Root (`README.md`, `CONTRIBUTING.md`) | Complete |
+| | **SCRUM-82** | Establish repository folder structure and naming conventions | QA Standards | Repository Directory Tree | Complete |
+| | **SCRUM-83** | Establish contribution and version-control workflow | QA Standards | `CONTRIBUTING.md` | Complete |
 | **SCRUM-26** | | **Build and verify Packet Tracer topology** | Appx D | N/A (Parent Story) | In Progress |
 | | **SCRUM-84** | Build the enterprise network topology in Packet Tracer | Appx D | `Configurations/CYBEROPS07_Topology_v1.0.pkt` | In Progress |
 | | **SCRUM-85** | Configure baseline device interfaces and addressing | Appx D & E | `Configurations/CYBEROPS07_Topology_v1.0.pkt` | In Progress |
