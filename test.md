@@ -1,10 +1,5 @@
 ```mermaid
 graph TD
-    classDef edge fill:#f9f,stroke:#333,stroke-width:2px;
-    classDef internal fill:#bbf,stroke:#333,stroke-width:2px;
-    classDef core fill:#f96,stroke:#333,stroke-width:2px;
-    classDef server fill:#bfb,stroke:#333,stroke-width:2px;
-
     WAN["Edge WAN / External (203.0.113.0/24)"] --> RTR_EDGE["RTR-EDGE-01 - ISR 4331 Edge Router"]
 
     RTR_EDGE --> RTR_INT1["RTR-INT-01 - Internal Router"]
@@ -25,9 +20,4 @@ graph TD
 
     SW_ACC3 --> LOGGING["Logging & Time Subnet (10.20.50.0/24) - SRV-SYSLOG & SRV-NTP"]
     SW_ACC3 --> SERVERS["Server Subnet (10.20.30.0/24) - SRV-APP-01 & 02"]
-
-    class WAN,RTR_EDGE edge;
-    class RTR_INT1,RTR_INT2,SW_ACC1,SW_ACC2,SW_ACC3 internal;
-    class SW_DIST core;
-    class LOGGING,SERVERS server;
 ```
