@@ -45,6 +45,12 @@ This document establishes end-to-end traceability across the CYBEROPS-07 project
 
 ## 3. Decision, Change, & Known Limitation Record
 
+### A. Architectural Design Baseline
+- **DEC-01 (Inter-VLAN Routing):** Selected Cisco Catalyst 3560 as the distribution layer switch to perform native Layer 3 routing between network trust segments per Appendix D[cite: 10].
+- **DEC-02 (Centralized Services Subnet):** Designated `10.20.50.0/24` as the dedicated Logging & Time Services segment, housing the Syslog and NTP infrastructure per Appendix E[cite: 10].
+
+### B. Observed Bugs & Technical Limitations
+*(No simulator bugs or technical workarounds encountered yet. Issues will be documented here as testing and topology verification progress in Sprint 1.)*
 
 ---
 
