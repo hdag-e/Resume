@@ -1,12 +1,12 @@
 # Requirements Traceability Matrix & Review Process (SCRUM-80)
 
 ## 1. Overview & Operating Rules
-This document establishes end-to-end traceability across the CYBEROPS-07 project lifecycle[cite: 10, 11]. It maps every Jira Parent Story and Child Subtask to its core scope requirement, Git evidence location, and validation status[cite: 10, 11].
+This document establishes end-to-end traceability across the CYBEROPS-07 project lifecycle. It maps every Jira Parent Story and Child Subtask to its core scope requirement, Git evidence location, and validation status.
 
 ### Operating Rules for Team Members:
-1. **Scope Mapping:** Every Jira subtask must map to at least one core scope deliverable or test case[cite: 10, 11].
-2. **Evidence Linking:** Subtasks cannot be marked `Done` in Jira without linking relative file paths to logs, documentation, or `.pkt` models in the repository[cite: 10, 11].
-3. **Living Lifecycle Document:** Update this table whenever new subtasks move to `In Progress` or `Complete`[cite: 10, 11].
+1. **Scope Mapping:** Every Jira subtask must map to at least one core scope deliverable or test case.
+2. **Evidence Linking:** Subtasks cannot be marked `Done` in Jira without linking relative file paths to logs, documentation, or `.pkt` models in the repository.
+3. **Living Lifecycle Document:** Update this table whenever new subtasks move to `In Progress` or `Complete`.
 
 ---
 
@@ -46,12 +46,12 @@ This document establishes end-to-end traceability across the CYBEROPS-07 project
 ## 3. Decision, Change, & Known Limitation Record
 
 ### A. Architecture & Scope Decisions
-- **DEC-01:** Selected Cisco Catalyst 3560 for `SW-DIST-01` to perform Layer 3 Inter-VLAN routing natively[cite: 10, 11].
-- **DEC-02:** Allocated `10.20.50.10` for `SRV-SYSLOG` and `10.20.50.20` for `SRV-NTP` on a dedicated infrastructure services segment (`10.20.50.0/24`)[cite: 10].
+- **DEC-01:** Selected Cisco Catalyst 3560 for `SW-DIST-01` to perform Layer 3 Inter-VLAN routing natively.
+- **DEC-02:** Allocated `10.20.50.10` for `SRV-SYSLOG` and `10.20.50.20` for `SRV-NTP` on a dedicated infrastructure services segment (`10.20.50.0/24`).
 
 ### B. Recorded Simulator Limitations & Technical Workarounds
-- **LIM-01 (Packet Tracer Syntax):** Standard IOS `clock timezone UTC 0 0` threw syntax errors in Packet Tracer 8.x; standardized on `clock timezone UTC 0` across all baseline templates[cite: 10, 11].
-- **LIM-02 (Layer 3 SVI Down/Down State):** SVI interfaces on `SW-DIST-01` stay administratively down until Layer 2 VLAN definitions (`vlan <id>`) are created in the switch VLAN database[cite: 10, 11].
+- **LIM-01 (Packet Tracer Syntax):** Standard IOS `clock timezone UTC 0 0` threw syntax errors in Packet Tracer 8.x; standardized on `clock timezone UTC 0` across all baseline templates.
+- **LIM-02 (Layer 3 SVI Down/Down State):** SVI interfaces on `SW-DIST-01` stay administratively down until Layer 2 VLAN definitions (`vlan <id>`) are created in the switch VLAN database.
 
 ---
 
