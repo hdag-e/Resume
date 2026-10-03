@@ -69,4 +69,10 @@ graph TD
     SW_ACC2 --> MGMT["Management Subnet (10.20.99.0/24)"]
 
     SW_ACC3 --> LOGGING["Logging & Time Subnet (10.20.50.0/24) - SRV-SYSLOG & SRV-NTP"]
-    SW_ACC3 --> SERVERS["Server Subnet (10.20.30.0/24) - SRV-APP-01 & 02"]
+    SW_ACC3 --> SERVERS["Server Subnet (1
+```
+
+
+
+
+0.20.30.0/24) - SRV-APP-01 & 02"]
