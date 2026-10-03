@@ -50,7 +50,7 @@ clock timezone UTC 0
 
 ### 4. Layer 3 Inter-VLAN Routing Standards (SW-DIST-01)
 ```cisco
-! Step 1: Create Layer 2 VLAN Database Entries (Required for SVIs to show UP/UP)
+! Step 1: Create Layer 2 VLAN Database Entries 
 vlan 10
  name Users
 vlan 20
@@ -99,7 +99,7 @@ interface Vlan500
  ip address 192.168.50.1 255.255.255.0
  no shutdown
 
-! Step 4: Configure Trunk Ports to Access Switches (e.g., GigabitEthernet 1/0/1 - 3)
+! Step 4: Configure Trunk Ports to Access Switches 
 interface range Gig1/0/1 - 3
  switchport trunk encapsulation dot1q
  switchport mode trunk
