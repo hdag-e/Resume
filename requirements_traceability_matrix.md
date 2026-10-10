@@ -15,7 +15,7 @@ This document establishes end-to-end traceability across the CYBEROPS-07 project
 | Parent Story | Subtask ID | Task Description | Scope Mapping | Evidence / File Path in Repository | Status |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **SCRUM-23** | | **Establish enterprise network baseline** | Appx D & E | N/A (Parent Story) | :white_check_mark: Complete |
-| | **SCRUM-74** | Define the enterprise network addressing plan | Appx D & E | `Documentations/Network_Foundation/Network_Addressing_Plan.md‎` | :white_check_mark: Complete |
+| | **SCRUM-74** | Define the enterprise network addressing plan | Appx D & E | [network_segmentation_and_roles.md](network_segmentation_and_roles.md) | :white_check_mark: Complete |
 | | **SCRUM-75** | Define device roles and network segmentation | Appx D & E | `Documentations/Network_Foundation/network_segmentation_and_roles.md` | :white_check_mark: Complete |
 | | **SCRUM-76** | Document baseline network architecture | Appx D & E | `Documentations/Network_Foundation/Baseline_Network_Architecture.md` | :white_check_mark: Complete |
 | | **SCRUM-77** | Define baseline device configuration requirements | Appx B | `Documentations/Network_Foundation/baseline_config_requirements.md` | :white_check_mark: Complete |
