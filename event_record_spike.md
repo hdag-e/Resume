@@ -53,14 +53,14 @@ Packet Tracer does not log cable physical diagnostic metrics, optical transceive
 
 ## Event 2: EVT-02
 
-Event ID: EVT-02
-Event Name: Unauthorized Privileged Access Failure
-Jira Issue: SCRUM-32
-Contributor: Security Analyst Team
-Date and Time: 10/24/2026 14:22:10.012
-Source Device: RTR-EDGE-01
-Packet Tracer file/version: CYBEROPS07_Configuration_v1_1
-Evidence status: Simulated / PT Limitation Documented
+- Event ID: EVT-02
+- Event Name: Unauthorized Privileged Access Failure
+- Jira Issue: SCRUM-32
+- Contributor: Security Analyst Team
+- Date and Time: 10/24/2026 14:22:10.012
+- Source Device: RTR-EDGE-01
+- Packet Tracer file/version: CYBEROPS07_Configuration_v1_1
+- Evidence status: Simulated / PT Limitation Documented
 
 ### Generating Action
 Executed disable to enter user EXEC mode on RTR-EDGE-01, ran the enable command, and entered an incorrect secret password three consecutive times.
@@ -98,14 +98,14 @@ Identity Attribution: Packet Tracer logs line information (vty0), but does not c
 
 ## Event 3: EVT-03
 
-Event ID: EVT-03
-Event Name: CLI Configuration Mode Entry
-Jira Issue: SCRUM-32
-Contributor: Security Analyst Team
-Date and Time: 10/24/2026 14:30:00.881
-Source Device: SW-DIST-01
-Packet Tracer file/version: CYBEROPS07_Configuration_v1_1
-Evidence status: Observed
+- Event ID: EVT-03
+- Event Name: CLI Configuration Mode Entry
+- Jira Issue: SCRUM-32
+- Contributor: Security Analyst Team
+- Date and Time: 10/24/2026 14:30:00.881
+- Source Device: SW-DIST-01
+- Packet Tracer file/version: CYBEROPS07_Configuration_v1_1
+- Evidence status: Observed
 
 ### Generating Action
 Entered configure terminal on SW-DIST-01 and exited configuration mode using end.
