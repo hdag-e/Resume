@@ -19,8 +19,8 @@ This document establishes the official SOC interpretation framework for security
 | Event ID | Event Name | Device / Interface | Observed / Expected Log Line | Observed Syslog Severity | Severity Source | Supporting Evidence Reference |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | **EVT-01** | Interface Link State Change | `SW-ACC-01` (`Fa0/24`) | `%LINK-3-UPDOWN: Interface FastEthernet0/24, changed state to down` / `up` | Level 3 (Error) | Explicitly provided in log header (`%LINK-3-UPDOWN`) | `Evidence/Sprint_2/network_evidence/EVT-01_syslog_receipt.png` |
-| **EVT-02** | Unauthorized Privileged Access Failure | `RTR-EDGE-01` (`vty0`) | `%SYS-4-CONFIG_P: Access to privileged exec mode failed from vty0` | Level 4 (Warning) | Documented Cisco IOS standard (`%SYS-4-CONFIG_P`) | **PT Simulation Limitation:** Traps not emitted remotely over UDP 514 on local failure (`EVT-02_syslog_receipt.png`) |
-| **EVT-03** | CLI Configuration Mode Entry | `SW-DIST-01` (Console/VTY) | `%SYS-5-CONFIG_I: Configured from console by console` | Level 5 (Notice) | Explicitly provided in log header (`%SYS-5-CONFIG_I`) | `EVT-03_syslog_receipt.png` |
+| **EVT-02** | Unauthorized Privileged Access Failure | `RTR-EDGE-01` (`vty0`) | `%SYS-4-CONFIG_P: Access to privileged exec mode failed from vty0` | Level 4 (Warning) | Documented Cisco IOS standard (`%SYS-4-CONFIG_P`) | **PT Simulation Limitation:** Traps not emitted remotely over UDP 514 on local failure (`Evidence/Sprint_2/network_evidence/EVT-02_syslog_receipt.png`) |
+| **EVT-03** | CLI Configuration Mode Entry | `SW-DIST-01` (Console/VTY) | `%SYS-5-CONFIG_I: Configured from console by console` | Level 5 (Notice) | Explicitly provided in log header (`%SYS-5-CONFIG_I`) | `Evidence/Sprint_2/network_evidence/EVT-03_syslog_receipt.png` |
 
 ---
 
