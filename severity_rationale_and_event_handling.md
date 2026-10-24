@@ -1,6 +1,5 @@
 # Logging Severity Rationale and Event Handling Requirements
 
-- **Document ID:** DOC-SCRUM34-01
 - **Jira Issue:** SCRUM-34
 - **Author / Contributor:** Security Analyst Team
 - **Date:** 10/24/2026
