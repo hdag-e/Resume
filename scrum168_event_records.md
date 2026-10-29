@@ -7,13 +7,13 @@
 
 ---
 
-## Event 1: EVT-06
+## Event 6:
 
 - **Event ID:** EVT-06
 - **Event Name:** Distribution Switch Interface State Change
 - **Jira Issue:** SCRUM-168
 - **Contributor:** Hasan Dagdelen
-- **Date and Time:** Oct 30 05:31:04.3131
+- **Date and Time:** Oct 6 05:31:04.3131
 - **Source Device:** SW-DIST-01 (10.20.50.1)
 - **Packet Tracer file/version:** CYBEROPS07_Configuration_v3_0 / Cisco Packet Tracer 8.2.1
 - **Evidence status:** Observed
@@ -53,13 +53,13 @@ Cisco Packet Tracer captures basic Layer 2 %LINK-5-CHANGED and %LINEPROTO-5-UPDO
 
 ---
 
-## Event 2: EVT-07
+## Event 7:
 
 - **Event ID:** EVT-07
 - **Event Name:** Distribution Switch Configuration Mode Entry & Unauthorized VLAN Creation
 - **Jira Issue:** SCRUM-168
 - **Contributor:** Hasan Dagdelen
-- **Date and Time:** Oct 30 05:21:50.2121
+- **Date and Time:** Oct 6 05:21:50.2121
 - **Source Device:** SW-DIST-01 (10.20.50.1)
 - **Packet Tracer file/version:** CYBEROPS07_Configuration_v3_0 / Cisco Packet Tracer 8.2.1
 - **Evidence status:** Observed
@@ -95,56 +95,56 @@ Security Property affected: Integrity
 While standard Cisco IOS generates a global %SYS-5-CONFIG_I syslog message confirming that configuration mode was entered/exited, Packet Tracer does not support advanced CLI command accounting (e.g., archive config or TACACS+ command logging). Consequently, the specific commands executed (such as vlan 999) must be audited manually via show running-config.
 ---
 
-## Event 3: EVT-08
+## Event 8:
 
 - **Event ID:** EVT-08
 - **Event Name:** Privilege Exec Mode Authentication Failure (`enable` secret)
 - **Jira Issue:** SCRUM-168
 - **Contributor:** Hasan Dagdelen
-- **Date and Time:** Oct 30 05:25:00.000 (Approx)
+- **Date and Time:** Oct 6 05:25:00.000 (Approx)
 - **Source Device:** SW-DIST-01 (10.20.50.1)
 - **Packet Tracer file/version:** CYBEROPS07_Configuration_v3_0 / Cisco Packet Tracer 8.2.1
 - **Evidence status:** Observed (Console) / PT Forwarding Limitation Documented
 
 ### Generating Action
-Entered user EXEC mode on SW-DIST-01, initiated the `enable` command, and deliberately entered an incorrect secret password three consecutive times.
+Accessed SW-DIST-01 console/VTY interface, entered username 1 with an invalid password, resulting in an authentication failure.
 
 ### Log Appearance
 ```text
-% Bad secrets
+%SEC_LOGIN-5-LOGIN_FAILED: Login failed [user: 1] [localport: 0] [Reason: Login Authentication Failed] at 10:09:19 UTC Tue Oct 6 2026
 ```
 
 ## Explanation
-Legitimate: Administrator password mistype or outdated credentials entered during routine management.
+Legitimate: Administrator password mistype or outdated credentials entered during routine switch management.
 
-Malicious: Brute-force or dictionary attack attempting to escalate privileges from user EXEC to privileged EXEC mode on the core distribution switch.
+Malicious: Password guessing, credential stuffing, or brute-force attack targeting local administrative accounts on the distribution switch.
 
 ## Distinguishing Evidence
-Frequency and rate of failure occurrences, line connection source (console vs. VTY line), and active SSH session history.
+Frequency of failed attempts within a short time window, connection source line, and failure patterns preceding or following successful logon events (%SEC_LOGIN-5-LOGIN_SUCCESS).
 
 ## Classification
-Syslog severity, if available: Level 4 (Warning)
+Syslog Severity: Notice (Severity 5)
 
-Assigned analytical severity and rationale: Medium to High. Indicates unauthorized privilege escalation attempts on control-plane infrastructure.
+Assigned Analytical Severity & Rationale: Medium. Indicates unauthorized access attempts targeting control-plane management interfaces.
 
-Analytical question: Did this authentication failure originate from an authorized console/management IP, and was it followed by account lockout?
+Analytical Question: Did this login failure originate from an authorized console/management station, and was it followed by account lockout?
 
-Response category: Immediate action
+Response Category: Correlate / Monitor
 
-Security Property affected: Confidentiality / Integrity
+Security Property Affected: Confidentiality / Integrity
 
 ## Limitations
-In Packet Tracer, local enable password failures generate % Bad secrets on the local CLI. However, without an external AAA/TACACS+ server or SSH VTY logging enabled, the event lacks granular identity attribution (it does not record the specific user account or remote source IP attempting the password escalation). Additionally, PT IOS models vary in whether local console %SYS-4-BADPASS alerts stream over remote UDP Syslog.
+Cisco IOS standard local security auditing captures the attempted username (1) and local port (0), but Packet Tracer does not capture higher-layer identity attributes such as TACACS+ session tokens or client MAC addresses without external AAA integration.
 
 ---
 
-## Event 4: EVT-09
+## Event 9:
 
 - **Event ID:** EVT-09
 - **Event Name:** Port Security Violation and Error-Disable Action
 - **Jira Issue:** SCRUM-168
 - **Contributor:** Hasan Dagdelen
-- **Date and Time:** Oct 30 05:55:53.5555
+- **Date and Time:** Oct 6 05:55:53.5555
 - **Source Device:** SW-DIST-01 (10.20.50.1)
 - **Packet Tracer file/version:** CYBEROPS07_Configuration_v3_0 / Cisco Packet Tracer 8.2.1
 - **Evidence status:** Observed
@@ -184,13 +184,13 @@ Port security logging (%PORT_SECURITY-2-PSECURE_VIOLATION) effectively captures 
 
 ---
 
-## Event 5: EVT-10
+## Event 10:
 
 - **Event ID:** EVT-10
 - **Event Name:** Spanning Tree BPDU Guard Violation and Port Error-Disable
 - **Jira Issue:** SCRUM-168
 - **Contributor:** Hasan Dagdelen
-- **Date and Time:** Oct 30 06:04:19.044
+- **Date and Time:** Oct 6 06:04:19.044
 - **Source Device:** SW-DIST-01 (10.20.50.1)
 - **Packet Tracer file/version:** CYBEROPS07_Configuration_v3_0 / Cisco Packet Tracer 8.2.1
 - **Evidence status:** Observed
