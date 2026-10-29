@@ -49,7 +49,7 @@ Response category: Correlate
 Security Property affected: Availability
 
 ## Limitations
-The link-state event logs physical line protocol state transitions but does not detail the specific CLI user account or session line that initiated the command without external AAA/TACACS+ accounting.
+Cisco Packet Tracer captures basic Layer 2 %LINK-5-CHANGED and %LINEPROTO-5-UPDOWN console events, but lacks real-world hardware telemetry such as SFP optical transceiver power levels, Time-Domain Reflectometry (TDR) cable diagnostics, or physical PHY layer negotiation errors.
 
 ---
 
@@ -92,8 +92,7 @@ Response category: Correlate
 Security Property affected: Integrity
 
 ## Limitations
-Packet Tracer logs the entry and exit from global configuration mode (`%SYS-5-CONFIG_I`), but does not stream individual CLI command strings (`vlan 999`) to Syslog.
-
+While standard Cisco IOS generates a global %SYS-5-CONFIG_I syslog message confirming that configuration mode was entered/exited, Packet Tracer does not support advanced CLI command accounting (e.g., archive config or TACACS+ command logging). Consequently, the specific commands executed (such as vlan 999) must be audited manually via show running-config.
 ---
 
 ## Event 3: EVT-08
@@ -135,7 +134,7 @@ Response category: Immediate action
 Security Property affected: Confidentiality / Integrity
 
 ## Limitations
-Packet Tracer IOS images print `% Bad secrets` locally to the console terminal but fail to forward `%SYS-4-BADPASS` or enable-failure syslog traps over UDP 514 to remote Syslog servers.
+In Packet Tracer, local enable password failures generate % Bad secrets on the local CLI. However, without an external AAA/TACACS+ server or SSH VTY logging enabled, the event lacks granular identity attribution (it does not record the specific user account or remote source IP attempting the password escalation). Additionally, PT IOS models vary in whether local console %SYS-4-BADPASS alerts stream over remote UDP Syslog.
 
 ---
 
@@ -181,7 +180,7 @@ Response category: Immediate action
 Security Property affected: Integrity / Availability
 
 ## Limitations
-Identifies the violating MAC address and switch port, but does not identify host operating system details or physical user identity.
+Port security logging (%PORT_SECURITY-2-PSECURE_VIOLATION) effectively captures the offending MAC address (0030.A314.C145) and puts the interface in err-disable. However, Layer 2 security telemetry alone cannot identify higher-layer host attributes, such as the attached device's hostname, operating system, or whether the MAC address was spoofed.
 
 ---
 
@@ -225,4 +224,4 @@ Response category: Immediate action
 Security Property affected: Availability / Integrity
 
 ## Limitations
-BPDU Guard immediately disables the port upon frame reception, preventing further topology calculation attacks but omitting higher-layer packet payloads.
+BPDU Guard immediately shuts down the port (%SPANTREE-2-BLOCK_BPDUGUARD) upon detecting an unauthorized STP frame to protect topology stability. Because the port is isolated at the physical layer instantly, no further packet capture or payload analysis can be conducted on the offending device through that interface.
