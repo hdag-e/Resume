@@ -1,19 +1,19 @@
-# Security Event Records — Sprint 3 Set (SCRUM-168)
+# Security Event Records 
 
-- Related Jira Issues: SCRUM-168 (SEC-106, SEC-107, SEC-108, SEC-109, SEC-110)
+- Related Jira Issues: SCRUM-168 (Subtask of Scrum-40)
 - Contributor: Hasan Dagdelen / Security Analyst Team
 - Date: 10/27/2026
 - Target Environment: Packet Tracer Centralized Logging (10.20.50.10)
 
 ---
 
-## Event 1: SYS-EVT-006
+## Event 1: EVT-006
 
-- **Event ID:** SYS-EVT-006
+- **Event ID:** EVT-006
 - **Event Name:** Unauthorized Access Control List (ACL) Traffic Denial
-- **Jira Issue:** SEC-106
+- **Jira Issue:** Scrum-168
 - **Contributor:** Hasan Dagdelen
-- **Date and Time:** 2026-10-27 15:10:00 UTC
+- **Date and Time:** 2026-10-30 15:10:00 UTC
 - **Source Device:** RTR-INT-01 (10.20.99.1)
 - **Packet Tracer file/version:** Enterprise_Monitored_v3_0.pkt / Cisco Packet Tracer 8.2.1
 - **Evidence status:** Observed
@@ -56,9 +56,9 @@ The ACL log entry confirms that the packet was intercepted and dropped at the ro
 
 - **Event ID:** SEC-EVT-007
 - **Event Name:** Port Security Violation and Interface Shutdown
-- **Jira Issue:** SEC-107
+- **Jira Issue:** Scrum-168
 - **Contributor:** Hasan Dagdelen / Security Analyst Team
-- **Date and Time:** 2026-10-27 15:25:30 UTC
+- **Date and Time:** 2026-10-30 15:25:30 UTC
 - **Source Device:** SW-ACC-01 (10.20.99.11)
 - **Packet Tracer file/version:** Enterprise_Monitored_v3_0.pkt / Cisco Packet Tracer 8.2.1
 - **Evidence status:** Observed
@@ -103,9 +103,9 @@ This log event identifies the offending MAC address and port, but does not provi
 
 - **Event ID:** AUTH-EVT-008
 - **Event Name:** Privilege Exec Mode Authentication Failure (Enable Secret)
-- **Jira Issue:** SEC-108
+- **Jira Issue:** Scrum-168
 - **Contributor:** Hasan Dagdelen / Security Analyst Team
-- **Date and Time:** 2026-10-27 15:40:12 UTC
+- **Date and Time:** 2026-10-30 15:40:12 UTC
 - **Source Device:** SW-DIST-01 (10.20.99.2)
 - **Packet Tracer file/version:** Enterprise_Monitored_v3_0.pkt / Cisco Packet Tracer 8.2.1
 - **Evidence status:** Observed
@@ -115,7 +115,7 @@ Entered the `enable` command on SW-DIST-01 via console or VTY line and deliberat
 
 ### Log Appearance
 ```text
-%SYS-4-BADPASS: Password incorrect
+%4-BADPASS: Password incorrect
 ```
 
 ## Explanation
@@ -140,7 +140,7 @@ Response category: Immediate action
 Security Property affected: Confidentiality / Integrity
 
 ## Limitations
-The `%SYS-4-BADPASS` syslog message records that an incorrect password was submitted, but does not record the actual string entered or the user account attempted.
+The `%4-BADPASS` syslog message records that an incorrect password was submitted, but does not record the actual string entered or the user account attempted.
 
 ---
 
@@ -148,9 +148,9 @@ The `%SYS-4-BADPASS` syslog message records that an incorrect password was submi
 
 - **Event ID:** NET-EVT-009
 - **Event Name:** Unscheduled Interface Administrative State Change (Shutdown)
-- **Jira Issue:** SEC-109
+- **Jira Issue:** Scrum-168
 - **Contributor:** Hasan Dagdelen / Security Analyst Team
-- **Date and Time:** 2026-10-27 15:55:04 UTC
+- **Date and Time:** 2026-10-30 15:55:04 UTC
 - **Source Device:** SW-ACC-02 (10.20.99.12)
 - **Packet Tracer file/version:** Enterprise_Monitored_v3_0.pkt / Cisco Packet Tracer 8.2.1
 - **Evidence status:** Observed
@@ -172,7 +172,7 @@ Malicious: An attacker with privilege access disabling key switch interfaces to 
 ## Distinguishing Evidence
 Change Window Approval: Verification whether a ticket existed requesting port Fa0/2 to be taken offline.
 
-Concurrent Config Logs: Checking for `%SYS-5-CONFIG_I` logs from the same timestamp to determine which admin line executed the shutdown.
+Concurrent Config Logs: Checking for `%5-CONFIG_I` logs from the same timestamp to determine which admin line executed the shutdown.
 
 ## Classification
 Syslog severity, if available: Notice (Severity 5)
@@ -190,13 +190,13 @@ The interface state change log confirms the port was brought down, but does not 
 
 ---
 
-## Event 5: SYS-EVT-010
+## Event 5: EVT-010
 
-- **Event ID:** SYS-EVT-010
+- **Event ID:** EVT-010
 - **Event Name:** Centralized Syslog Service Interruption / Logging Target Unreachable
-- **Jira Issue:** SEC-110
+- **Jira Issue:** Scrum-168
 - **Contributor:** Hasan Dagdelen / Security Analyst Team
-- **Date and Time:** 2026-10-27 16:10:22 UTC
+- **Date and Time:** 2026-10-30 16:10:22 UTC
 - **Source Device:** RTR-EDGE-01 (10.20.99.1)
 - **Packet Tracer file/version:** Enterprise_Monitored_v3_0.pkt / Cisco Packet Tracer 8.2.1
 - **Evidence status:** Observed
@@ -206,7 +206,7 @@ Removed or misconfigured the logging target IP address on RTR-EDGE-01 (`no loggi
 
 ### Log Appearance
 ```text
-%SYS-6-LOGGINGHOST_STARTSTOP: Logging to host 10.20.50.10 stopped
+%6-LOGGINGHOST_STARTSTOP: Logging to host 10.20.50.10 stopped
 ```
 
 ## Explanation
