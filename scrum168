@@ -2,16 +2,11 @@ Security Event Record
 Event ID: SYS-EVT-006
 
 Event Name: Unauthorized Access Control List (ACL) Traffic Denial
-
 Jira Issue: SEC-106
-
-Contributor: [Your Name / Group]
-
+Contributor: Hasan Dagdelen
 Date and Time: 2026-10-27 15:10:00 UTC
-
 Source Device: RTR-INT-01 (10.20.99.1)
-
-Packet Tracer file/version: Enterprise_Monitored_v3.pkt / Cisco Packet Tracer 8.2.1
+Packet Tracer file/version: Enterprise_Monitored_v3_0.pkt / Cisco Packet Tracer 8.2.1
 
 Evidence status: Observed
 
@@ -31,7 +26,7 @@ Traffic Volume/Frequency: Multiple denied packets across sequential target IP ad
 
 Source MAC/IP Correlation: Cross-referencing the source IP 10.20.10.15 against DHCP binding tables to identify the specific physical host.
 
-Classification
+##Classification
 Syslog severity, if available: Informational (Severity 6)
 
 Assigned analytical severity and rationale: Medium. Denied cross-VLAN traffic indicates that network boundary controls are working, but repeated denials suggest active internal scanning or policy violation.
@@ -44,6 +39,8 @@ Security Property affected: Confidentiality / Integrity
 
 Limitations
 The ACL log entry confirms that the packet was intercepted and dropped at the router interface, but it cannot determine whether the payload contained malicious exploit traffic or simple echo requests.
+
+---
 
 Security Event Record
 Event ID: SEC-EVT-007
@@ -94,6 +91,8 @@ Security Property affected: Integrity / Availability
 Limitations
 This log event identifies the offending MAC address and port, but does not provide details regarding the operating system, hostname, or intent of the unauthorized device plugged into the port.
 
+---
+
 Security Event Record
 Event ID: AUTH-EVT-008
 
@@ -141,6 +140,8 @@ Security Property affected: Confidentiality / Integrity
 Limitations
 The %SYS-4-BADPASS syslog message records that an incorrect password was submitted, but does not record the actual string entered or the user account attempted.
 
+---
+
 Security Event Record
 Event ID: NET-EVT-009
 
@@ -162,7 +163,7 @@ Generating Action
 Entered global interface configuration mode on SW-ACC-02 for an active port (interface FastEthernet0/2) and executed the shutdown command without prior operational notice.
 
 Log Appearance
-Plaintext
+
 %LINK-5-CHANGED: Interface FastEthernet0/2, changed state to administratively down
 %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/2, changed state to down
 Explanation
@@ -188,6 +189,8 @@ Security Property affected: Availability
 
 Limitations
 The interface state change log confirms the port was brought down, but does not prove whether the action was taken maliciously or as part of manual incident containment.
+
+---
 
 Security Event Record
 Event ID: SYS-EVT-010
