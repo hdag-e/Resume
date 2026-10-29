@@ -1,8 +1,8 @@
-# Security Event Records — Sprint 3 Set (SCRUM-168: SW-DIST-01)
+# Security Event Records — Sprint 3 Set 
 
-- Related Jira Issues: SCRUM-168 (EVT-06, EVT-07, EVT-08, EVT-09, EVT-10)
+- Related Jira Issues: SCRUM-168 (Subtask of Scrum-40)
 - Contributor: Hasan Dagdelen / Distribution Switch Lead
-- Date: 10/27/2026
+- Date: 10/30/2026
 - Target Environment: Packet Tracer Centralized Logging (10.20.50.10)
 
 ---
@@ -13,9 +13,9 @@
 - **Event Name:** Distribution Switch Interface State Change
 - **Jira Issue:** SCRUM-168
 - **Contributor:** Hasan Dagdelen
-- **Date and Time:** Oct 06 05:31:01.3131 / Oct 06 05:31:04.3131
+- **Date and Time:** Oct 30 05:31:04.3131
 - **Source Device:** SW-DIST-01 (10.20.50.1)
-- **Packet Tracer file/version:** CYBEROPS07_Configuration_v1_1 / Cisco Packet Tracer 8.2.1
+- **Packet Tracer file/version:** CYBEROPS07_Configuration_v3_0 / Cisco Packet Tracer 8.2.1
 - **Evidence status:** Observed
 
 ### Generating Action
@@ -59,9 +59,9 @@ The link-state event logs physical line protocol state transitions but does not 
 - **Event Name:** Distribution Switch Configuration Mode Entry & Unauthorized VLAN Creation
 - **Jira Issue:** SCRUM-168
 - **Contributor:** Hasan Dagdelen
-- **Date and Time:** Oct 06 05:21:50.2121
+- **Date and Time:** Oct 30 05:21:50.2121
 - **Source Device:** SW-DIST-01 (10.20.50.1)
-- **Packet Tracer file/version:** CYBEROPS07_Configuration_v1_1 / Cisco Packet Tracer 8.2.1
+- **Packet Tracer file/version:** CYBEROPS07_Configuration_v3_0 / Cisco Packet Tracer 8.2.1
 - **Evidence status:** Observed
 
 ### Generating Action
@@ -102,9 +102,9 @@ Packet Tracer logs the entry and exit from global configuration mode (`%SYS-5-CO
 - **Event Name:** Privilege Exec Mode Authentication Failure (`enable` secret)
 - **Jira Issue:** SCRUM-168
 - **Contributor:** Hasan Dagdelen
-- **Date and Time:** Oct 06 05:25:00.000 (Approx)
+- **Date and Time:** Oct 30 05:25:00.000 (Approx)
 - **Source Device:** SW-DIST-01 (10.20.50.1)
-- **Packet Tracer file/version:** CYBEROPS07_Configuration_v1_1 / Cisco Packet Tracer 8.2.1
+- **Packet Tracer file/version:** CYBEROPS07_Configuration_v3_0 / Cisco Packet Tracer 8.2.1
 - **Evidence status:** Observed (Console) / PT Forwarding Limitation Documented
 
 ### Generating Action
@@ -145,9 +145,9 @@ Packet Tracer IOS images print `% Bad secrets` locally to the console terminal b
 - **Event Name:** Port Security Violation and Error-Disable Action
 - **Jira Issue:** SCRUM-168
 - **Contributor:** Hasan Dagdelen
-- **Date and Time:** Oct 06 05:55:53.5555
+- **Date and Time:** Oct 30 05:55:53.5555
 - **Source Device:** SW-DIST-01 (10.20.50.1)
-- **Packet Tracer file/version:** CYBEROPS07_Configuration_v1_1 / Cisco Packet Tracer 8.2.1
+- **Packet Tracer file/version:** CYBEROPS07_Configuration_v3_0 / Cisco Packet Tracer 8.2.1
 - **Evidence status:** Observed
 
 ### Generating Action
@@ -191,9 +191,9 @@ Identifies the violating MAC address and switch port, but does not identify host
 - **Event Name:** Spanning Tree BPDU Guard Violation and Port Error-Disable
 - **Jira Issue:** SCRUM-168
 - **Contributor:** Hasan Dagdelen
-- **Date and Time:** Oct 06 06:04:19.044
+- **Date and Time:** Oct 30 06:04:19.044
 - **Source Device:** SW-DIST-01 (10.20.50.1)
-- **Packet Tracer file/version:** CYBEROPS07_Configuration_v1_1 / Cisco Packet Tracer 8.2.1
+- **Packet Tracer file/version:** CYBEROPS07_Configuration_v3_0 / Cisco Packet Tracer 8.2.1
 - **Evidence status:** Observed
 
 ### Generating Action
