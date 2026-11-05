@@ -1,6 +1,6 @@
 # Deliverable D4 — Security Event Escalation Matrix & Decision Framework
 
-- **Jira Issue:** [SCRUM-43](https://njit-team-lbmxd47l.atlassian.net/browse/SCRUM-43)
+- **Jira Issue:** [SCRUM-43]
 - **Subtasks Covered:** SCRUM-147, SCRUM-148, SCRUM-149, SCRUM-150
 - **Parent Epic:** SCRUM-40 (Sprint 3 Security Telemetry & Incident Analysis)
 - **Contributor / Role:** CyberOps Team 7 (Triage & Escalation Lead)
