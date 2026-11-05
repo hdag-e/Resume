@@ -115,14 +115,3 @@ To fulfill the acceptance criteria for SCRUM-149 and 150, two representative eve
   4. Executed manual CLI check (`show ip access-lists`) to verify drop count matches.
   5. Decision reached: **Tier 2 (Investigate / Active Audit)** with `[UNVERIFIED - SIMULATOR LIMITATION]` tag.
 * **Validator Outcome:** **PASSED.** The validator did not incorrectly dismiss the event.
-
----
-
-## 5. Peer Review & Commit Sign-off (SCRUM-150)
-
-- **Reviewer:** Eric Lindemulder (Access Switch Lead)
-- **Review Date:** November 4, 2026
-- **Feedback Addressed:**
-  1. *Feedback:* Ensure recovery events like `EVT-15` (STP unblocking) are marked as Tier 1 routine logs so analysts don't trigger incident response on a recovery.
-  2. *Correction:* Explicitly categorized `EVT-15` under **Tier 1 (Routine / Log Only)** with instruction to verify forwarding state.
-- **Final Approval Status:** Approved and committed to shared GitHub repository under Sprint 3 deliverables (`Evidence/Sprint_3/Deliverable_D4_Security_Escalation_Matrix.md`).
