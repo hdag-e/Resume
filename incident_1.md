@@ -1,24 +1,17 @@
 # Incident #1 — Controlled Test Record & Sealed Evidence Package (`SCRUM-49`)
 
-> **CONFIDENTIALITY & BLIND RECONSTRUCTION NOTICE**  
-> This document serves as the **private Controlled Test Record ("Answer Key")** for **Incident #1 (`SCRUM-49`)**, staged by **Analyst Alpha**.  
-> **DO NOT** share this file or its contents with **Analyst Beta (Eric)** until his blind reconstruction (`SCRUM-50` / Appendix F Test `T-08`) is completed and submitted.
-
 ---
 
-## 1. Metadata & Package Control (`SCRUM-175` / `SCRUM-177`)
-
+## 1. Metadata & Package Control
 | Field | Details |
 | :--- | :--- |
 | **Incident ID** | Incident #1 (`SCRUM-49` / Appendix F Test `T-08`) |
 | **Scenario Title** | External Perimeter Probing & Router Control-Plane Compromise |
-| **Stager / Lead** | Analyst Alpha (Group 2) |
+| **Stager / Lead** | Analyst Alpha |
 | **Assigned Blind Reconstructor** | Analyst Beta (Eric — `SCRUM-50`) |
-| **Peer Reviewer (`SCRUM-178`)** | [Insert Teammate Name — e.g., Hussein Harb] |
-| **Lab Environment File** | `CYBEROPS07_Configuration_v3_4.pkt` (Cisco Packet Tracer 8.2.1 / 9.0.1) |
+| **Peer Reviewer (`SCRUM-178`)** | [] |
+| **Lab Environment File** | `CYBEROPS07_Configuration_v3_5.pkt` |
 | **Central Telemetry Collector** | `SRV-SYSLOG` (`10.20.50.10`) |
-| **Package Status** | `[ ] Draft` / `[ ] Executed` / `[ ] Sealed` / `[ ] Peer-Reviewed` |
-| **Seal Timestamp (UTC)** | `[YYYY-MM-DD HH:MM:SS UTC]` |
 
 ---
 
@@ -27,12 +20,12 @@
 Per project scope requirements, timestamp consistency across all involved devices was verified prior to executing any incident actions.
 
 * **Central NTP / Syslog Reference (`10.20.50.10`):** Stratum 1 / Reference Clock
-* **`RTR-INT-01` (`10.20.99.2` / `10.20.50.1`):**
+* **`RTR-INT-01`:**
   * **Status:** Synchronized, Stratum 2, Reference `10.20.50.10`
   * **Clock Offset:** `1.00 msec` (Verified prior to staging)
 * **`RTR-EDGE-01`:**
-  * **Clock / Timestamp Consideration:** Upon initial `.pkt` file load, `RTR-EDGE-01` briefly remained in an unsynchronized state (`stratum 16`, `Mon Jan 1 1990`) until initial ICMP reachability traffic triggered active NTP polling. Once polled, `RTR-EDGE-01` synchronized cleanly to `stratum 2` prior to executing Stage 1.
-  * **Evidence File:** `Evidence/Incident_1/00_NTP_Sync_Verification.png`
+  * **Status:** Synchronized, Stratum 2, Reference `10.20.50.10`
+  * **Clock Offset:** `1.00 msec` (Verified prior to staging)
 
 ---
 
@@ -85,7 +78,7 @@ An external threat actor operating from the untrusted external segment (`203.0.1
 
 ## 7. Peer Review & Repository Integration (`SCRUM-178`)
 
-* **Peer Reviewer Name:** `[Insert Teammate Name — e.g., Hussein Harb]`
+* **Peer Reviewer Name:** `[Name]`
 * **Review Date:** `[YYYY-MM-DD]`
 * **Verification Checklist:**
   * `[ ]` Sealed raw syslog file (`Incident_01_Syslog_Export.txt`) opens cleanly and is readable.
