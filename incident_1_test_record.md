@@ -67,8 +67,6 @@ An unauthorized actor operating from an internal User segment workstation (`PC-U
 
 10.06.2026 01:36:38.717 PM		10.20.99.2	%SEC_LOGIN-5-LOGIN_FAILED: Login failed [user: secadmin] [Source: 10.20.10.11] [localport: 22] [Reason: Login Authentication Failed] at 13:36:38 UTC Tue Oct 6 2026
 
-
-
 ```
 
 ---
