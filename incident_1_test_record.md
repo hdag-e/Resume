@@ -6,7 +6,7 @@
 | **Incident ID** | Incident #1 (`SCRUM-49` / Appendix F Test `T-08`) |
 | **Scenario Title** | Unauthorized Cross-Zone Probing & Router Control-Plane Compromise |
 | **Stager / Lead** | Analyst Alpha |
-| **Assigned Blind Reconstructor** | Analyst Beta (Eric — `SCRUM-50`) |
+| **Assigned Blind Reconstructor** | Analyst Beta (Hussein — `SCRUM-50`) |
 | **Lab Environment File** | `CYBEROPS07_Configuration_v3_5.pkt` (Isolated Execution Copy) |
 | **Central NTP & Syslog Server** | `SRV-NTP` / `SRV-SYSLOG` (`10.20.50.10`) |
 
