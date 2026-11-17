@@ -67,7 +67,6 @@ An unauthorized actor operating from an internal User segment workstation (`PC-U
 10.06.2026 01:36:38.717 PM		10.20.99.2	%SEC_LOGIN-5-LOGIN_FAILED: Login failed [user: secadmin] [Source: 10.20.10.11] [localport: 22] [Reason: Login Authentication Failed] at 13:36:38 UTC Tue Oct 6 2026
 
 ```
-
 ---
 
 ## 5. Packet Tracer Simulator Limitations Encountered (`SCRUM-176`)
@@ -76,14 +75,14 @@ An unauthorized actor operating from an internal User segment workstation (`PC-U
 2. **Command-Level Audit Accounting (`EVT-02`):** Standard Cisco IOS emits `%SYS-5-CONFIG_I` upon entering/exiting configuration mode, but Packet Tracer lacks TACACS+ command accounting or `archive` configuration diff logging to record exact CLI commands executed during Stage 3.
 3. **Source Workstation Attribution (`EVT-03`):** Local authentication failure logs record the attempted username (`secadmin`) and line/localport (`[localport: 22]`), but do not append source workstation hardware details or automated vs. manual session attributes.
 4. **Baseline Credential Isolation & Console Attribution (`EVT-02`):** Because the Week 3 frozen `username admin` MD5 (`secret 5`) hash could not be authenticated remotely without modifying master baseline credentials, a temporary local account (`secadmin`) was provisioned in an isolated execution copy for Stage 2, while Stage 3 configuration changes logged locally (`Configured from console by console`).
-5. **Pre-Network Boot Syslog Suppression (`EVT-05`):** Cisco Packet Tracer does not emit `%SYS-3-RESTART` or `%PMAN-5-EXITACTION` messages to remote syslog (`UDP 514`) when `reload` is executed because the router clears its console/memory state and restarts before IP interfaces, routing, and the syslog UDP client initialize. As a result, Stage 5 (`reload`) produces zero remote syslog output on `SRV-SYSLOG` and is verified instead via console reload capture (`05_RTR-INT-01_Reload.png`).
+5. **Pre-Network Boot Syslog Suppression (`EVT-05`):** Cisco Packet Tracer does not emit `%SYS-3-RESTART` or `%PMAN-5-EXITACTION` messages to remote syslog (`UDP 514`) when `reload` is executed because the router clears its console/memory state and restarts before IP interfaces, routing, and the syslog UDP client initialize. As a result, Stage 5 (`reload`) produces zero remote syslog output on `SRV-SYSLOG` and is verified directly during controlled execution.
 
 ---
 
 ## 6. Sealing & Blind Reconstruction Sufficiency Verification (`SCRUM-177`)
 
 - **Evidence Sealing Declaration:**  
-  Event generation for Incident #1 (`SCRUM-49`) concluded at `12:36:43.673 UTC` (Tue Oct 6 2026). The exported syslog file (`Incident_01_Syslog_Export.txt`) and supporting screenshots are frozen and sealed with no post-capture modifications.
+  Event generation for Incident #1 (`SCRUM-49`) concluded at `12:36:43.673 UTC` (Tue Oct 6 2026). The exported syslog file (`Incident_01_Syslog_Export.txt`) is frozen and sealed with no post-capture modifications.
 - **Sufficiency Check:**  
   * `[x]` All generated events map exclusively to the Sprint 3 Event Catalogue (`EVT-01` through `EVT-05`).
   * `[x]` Raw syslog entries contain consistent, NTP-synchronized timestamps across primary attack phases (with expected post-reload `1993` epoch behavior documented).
